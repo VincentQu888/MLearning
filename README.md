@@ -202,6 +202,16 @@ The MVP workflow is **prepare a dataset → build a network → train and evalua
 - **Rules:** Numeric values must be finite; dimensions and labels must be valid. Arrays are copied, and feature selection returns a new dataset.
 
 
+### Dataset
+- **Instance variables:** `name`, `source`, `features`, `classes`, `inputs`, `targets`.
+- **Relevant methods:** `selectFeatures(indices)`, `size()`, `input(row)`, `target(row)`, and metadata accessors.
+- **Rules:** Numeric values must be finite; dimensions and labels must be valid. Arrays are copied, and feature selection returns a new dataset.
+
+### TrainedModel
+- A domain prediction interface: `predict(double[] inputs)` returns class probabilities in the dataset's class order.
+- The concrete network, weights, and training-fitted normalization live in the outer training adapter, not in the use cases.
+- A separate persistent `TrainingRun` history entity is deferred: only the current model is stored, and the latest metrics are presented in the Swing view.
+
 ### Layer
 - **Instance variables:** `type`, `neurons`, `activation` (immutable record).
 - **Relevant methods:** Record accessors and constructor validation.
