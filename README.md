@@ -216,18 +216,11 @@ The MVP workflow is **prepare a dataset → build a network → train and evalua
 
 ## API Usage
 
----
+### OpenML REST API
 
-## Design Diagrams
+**Documentation:** [OpenML REST API](https://docs.openml.org/reference/api/)  
+**Dataset:** [Iris #61, version 1](https://www.openml.org/d/61)
 
-### UML Class Diagram
-
-### Sequence Diagrams
-
----
-
-## How to Run
-
----
-
-## Notes
+- Selecting OpenML Iris calls `https://www.openml.org/api/v1/json/data/61` from Java, validates the dataset/version/file ID, then downloads `https://openml.org/data/v1/download/61/iris.arff`.
+- No API key is needed. Requests are only for the public dataset
+- API supplies data, which is used for training the models that users create.
