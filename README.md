@@ -197,6 +197,12 @@ The MVP workflow is **prepare a dataset → build a network → train and evalua
 
 ## Entities
 
+### Layer
+- **Instance variables:** `type`, `neurons`, `activation` (immutable record).
+- **Relevant methods:** Record accessors and constructor validation.
+- **Rules:** Input uses no activation, hidden layers use tanh/ReLU, output uses softmax; 1–32 neurons per layer.
+
+
 ---
 
 ## API Usage
