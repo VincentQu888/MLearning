@@ -203,6 +203,11 @@ The MVP workflow is **prepare a dataset → build a network → train and evalua
 - **Rules:** Input uses no activation, hidden layers use tanh/ReLU, output uses softmax; 1–32 neurons per layer.
 
 
+### ModelDefinition
+- **Instance variables:** `layers` (immutable ordered list), `inputSize`, `outputSize`.
+- **Relevant methods:** Record accessors, constructor validation, `parameterCount()`.
+- **Rules:** Exactly one input first and one output last, with at most three hidden layers between them. Dimensions must match the prepared dataset. Editing replaces the definition instead of mutating it.
+
 ---
 
 ## API Usage
