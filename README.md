@@ -197,6 +197,10 @@ The MVP workflow is **prepare a dataset → build a network → train and evalua
 
 ## Entities
 
+### TrainingSettings
+- **Instance variables:** `epochs`, `learningRate` (immutable record); `SPLIT_SEED` is 207.
+- **Relevant methods:** Record accessors and constructor validation of resource limits.
+
 ### Dataset
 - **Instance variables:** `name`, `source`, `features`, `classes`, `inputs`, `targets`.
 - **Relevant methods:** `selectFeatures(indices)`, `size()`, `input(row)`, `target(row)`, and metadata accessors.
