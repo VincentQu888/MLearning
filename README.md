@@ -202,6 +202,10 @@ The MVP workflow is **prepare a dataset → build a network → train and evalua
 - **Relevant methods:** Record accessors and constructor validation.
 - **Rules:** Input uses no activation, hidden layers use tanh/ReLU, output uses softmax; 1–32 neurons per layer.
 
+### LearningProject
+- **Instance variables:** `dataset`, `definition`, `trainedModel`, `training`.
+- **Relevant methods:** `selectDataset(...)`, `define(...)`, `clearDefinition()`, `beginTraining()`, `finishTraining(...)`, and checked accessors.
+- **Rules:** Dataset or applied network changes discard trained results; edits, duplicate training, and prediction are rejected while training is active. Use cases synchronize project transitions.
 
 ---
 
